@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign In and Sign Up</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="css/login.css">
+  </head>
+  <body>
+   <div class="container">
+     <div class="formBox">
+       <h1 id="title">Sign Up</h1>
+       <form class="inputGroup" >
+         <div class="inputField" id="nameField">
+           <i class="uil uil-user"></i>
+           <input type="text" placeholder="Name">
+         </div>
+
+         <div class="inputField">
+           <i class="uil uil-envelope"></i>
+           <input type="email" placeholder="Email">
+         </div>
+
+         <div class="inputField">
+          <i class="uil uil-padlock"></i>
+           <input type="password" placeholder="Password">
+         </div>
+
+         <div class="btnField">
+          <button type="button" id="signupBtn">Sign Up</button>
+          <button type="button" id="signinBtn" class="disabled">Sign In</button>
+         </div>
+       </form>
+       <p>LOST PASSWORD !<a href="#">Click</a></p>
+     </div>
+   </div>
+   <script >
+
+      let signupBtn=document.getElementById("signupBtn");
+      let signinBtn=document.getElementById("signinBtn");
+      let nameField=document.getElementById("nameField");
+      let title=document.getElementById("title");
+      
+      signinBtn.addEventListener('click',function(){
+        //alert("hello");
+        nameField.style.maxHeight="0";
+        title.innerHTML="Sign In";
+        signupBtn.classList.add("disabled");
+        signinBtn.classList.remove("disabled");
+      }); 
+      
+      signupBtn.addEventListener('click',function(){
+        //alert("hello");
+        nameField.style.maxHeight="60px";
+        title.innerHTML="Sign Up";
+        signinBtn.classList.add("disabled");
+        signupBtn.classList.remove("disabled");
+      }); 
+      
+   </script>
+  </body>
+</html>
